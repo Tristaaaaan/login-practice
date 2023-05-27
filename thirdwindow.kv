@@ -1,0 +1,17 @@
+# Third Window
+<ThirdWindow>:
+    name: "third"
+    MDGridLayout:
+        cols: 2
+        size_hint_x: 0.90
+        spacing: 10
+        pos_hint: {'center_x': 0.5, 'center_y': 0.48}
+        MDTextField:
+            id: search
+            mode: "rectangle"
+            hint_text: "What are you looking for?"
+            font_size: "15dp"
+        MDIconButton:
+            icon: 'trash-can-outline'
+            on_release:
+                root.delete_checked_rows()
