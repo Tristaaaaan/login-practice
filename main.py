@@ -11,9 +11,6 @@ from kivymd.uix.button import MDFlatButton
 from kivymd.uix.datatables import MDDataTable
 from kivymd.uix.relativelayout import MDRelativeLayout
 
-import sqlite3
-import bcrypt
-
 from user_database import Database
 
 db = Database()
