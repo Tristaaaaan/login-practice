@@ -1,13 +1,10 @@
 import sqlite3
 import bcrypt
-import os
-
 
 class Database:
     def __init__(self):
 
-        self.app_path = os.path.dirname(os.path.abspath(__file__))
-        self.data_con = sqlite3.connect(os.path.join(self.app_path, 'user.db'))
+        self.data_con = sqlite3.connect('user.db')
         self.users = self.data_con.cursor()
         self.create_user_database()
 

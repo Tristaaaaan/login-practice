@@ -11,15 +11,12 @@ from kivymd.uix.button import MDFlatButton
 from kivymd.uix.datatables import MDDataTable
 from kivymd.uix.relativelayout import MDRelativeLayout
 
+import sqlite3
+import bcrypt
+
 from user_database import Database
 
 db = Database()
-
-if platform == "android":
-    from android.permissions import request_permissions, Permission
-    request_permissions([Permission.WRITE_EXTERNAL_STORAGE,
-                         Permission.READ_EXTERNAL_STORAGE])
-
 
 class ClickableTextField(MDRelativeLayout):
     password = StringProperty()
@@ -194,14 +191,6 @@ class rawApp(MDApp):
     def build(self):
 
         return WindowManager()
-
-    def on_start(self, **kwargs):
-
-        if platform == "android":
-            from android.permissions import request_permissions, Permission
-            request_permissions(
-                [Permission.WRITE_EXTERNAL_STORAGE, Permission.READ_EXTERNAL_STORAGE])
-
 
 if __name__ == '__main__':
     rawApp().run()
