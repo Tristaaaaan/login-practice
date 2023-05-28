@@ -1,4 +1,3 @@
-from kivy import platform
 from kivy.metrics import dp
 from kivy.clock import Clock
 from kivy.lang import Builder
